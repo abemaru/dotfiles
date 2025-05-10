@@ -1,6 +1,6 @@
 {
   description = "abemaru`s nix config";
-
+  
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
@@ -25,21 +25,27 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
 
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     nixModules = import ./nixos;
     homeManagerModules = import ./home-manager;
     overlays = import ./overlays {inherit inputs;};
 
     nixosConfigurations = {
-      nix = nixpkgs.lib.nixosSystem {
+      gpd = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
 	modules = [
 	  ./nixos/configuration.nix
+
+	  home-manager.nixosModules.home-manager
+	  {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.abemaru = import ./home-manager/home.nix;
+	  }
 	];
       };
     };
     homeConfigurations = {
-      "abemaru@nix"= home-manager.lib.homeManagerConfiguration {
+      "abemaru@gpd"= home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [

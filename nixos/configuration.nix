@@ -8,6 +8,9 @@
 {
   imports =    [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # docker
+      ./docker.nix
     ];
 
   # Bootloader.
@@ -81,12 +84,15 @@
   users.users.abemaru = {
     isNormalUser = true;
     description = "abemaru";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
     shell = pkgs.zsh;
   };
+
+  
+  nixpkgs.config.allowUnfree = true;
 
   # Install firefox.
   programs.firefox.enable = true;

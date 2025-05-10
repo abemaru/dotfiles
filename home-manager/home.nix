@@ -9,8 +9,9 @@
   };
 
   imports = [
-    ../pkgs/wezterm
     ../pkgs/hyprland
+    ../pkgs/wezterm
+    ../pkgs/neovim
   ];
 
   i18n.inputMethod = {
@@ -26,6 +27,8 @@
     neofetch
     vscode
 
+    discord
+
     gh # github cli
   ];
 
@@ -35,7 +38,6 @@
     userEmail = "awebo.abemaru@gmail.com";
   };
 
-  nixpkgs.config.allowUnfree = true;
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
 }

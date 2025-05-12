@@ -1,39 +1,83 @@
 {
   pkgs,
+  config,
+  lib,
   ...
-}: {
-  home.packages = with pkgs; [
-    neovim
+}:
+let
+  substituteStrings = import ../../lib/substituteStrings.nix;
+  pwd = (import ./pwd.nix { inherit config; }).pwd;
+in
+{
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    extraPackages = with pkgs; [
+      # LazyVim
+      lua-language-server
+      stylua
 
-    # lua
-    lua-language-server
-    stylua
+      # Telescope
+      ripgrep
+    ];
 
-    # Go
-    gopls
+    plugins = with pkgs.vimPlugins; [
+      lazy-nvim
+    ];
 
-    # Python
-    ruff
-    pyright
+    extraLuaConfig = 
+      let
+        plugins =  with pkgs.vimPlugins; [
+          vim-closetag
+          gitsigns-nvim
+          LazyVim
+          nvim-lspconfig
+	        nvim-cmp
 
-    # HTML/CSS
-    nodePackages.vscode-langservers-extracted
+          cmp-buffer
+	        cmp-nvim-lsp
+          cmp-path
+          cmp-cmdline
+          cmp_luasnip
 
-    # JS/TS/Frameworks
-    biome
-    deno
-    nodePackages.eslint
-    nodePackages.prettier
-    nodePackages.typescript-language-server
 
-    # Nix
-    nil
-    nixfmt-rfc-style
-  ];
+	        nvim-treesitter
+	        nvim-treesitter-textobjects
+	  nvim-web-devicons
 
-  programs.zsh.shellAliases = {
-    v = "nvim";
-    vi = "nvim";
-    vim = "nvim";
-  };
+	  telescope-fzf-native-nvim
+	  telescope-nvim
+	 ];
+	 mkEntryFromDrv =
+	   drv:
+	     {
+	       name = "${lib.getName drv}";
+	       path = drv;
+	     };
+	 lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
+	 lazyConfig = substituteStrings {
+	    file = ./init.lua;
+	      replacements = [
+ 	        {
+	          old = "@lazyPath@";
+	          new = "${lazyPath}";
+	        }
+	      ];
+	    };
+	    in
+            ''
+	      ${lazyConfig}
+	    '';
+      };
+
+      xdg.configFile."nvim/lua/conf" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${pwd}/conf";
+      };
+  
+      xdg.configFile."nvim/lua/plugins/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${pwd}/plugins";
+      };
 }
+

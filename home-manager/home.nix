@@ -12,6 +12,7 @@
     ../pkgs/hyprland
     ../pkgs/wezterm
     ../pkgs/neovim
+    ../pkgs/dev
   ];
 
   i18n.inputMethod = {
@@ -28,8 +29,8 @@
     vscode
 
     discord
-
-    gh # github cli
+    
+    gh
   ];
 
   programs.git = {

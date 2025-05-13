@@ -23,7 +23,6 @@
     ];
   };
 
-
   home.packages = with pkgs; [
     neofetch
     vscode
@@ -37,6 +36,20 @@
     enable = true;
     userName = "abemaru";
     userEmail = "awebo.abemaru@gmail.com";
+  };
+
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper = {
+        enable = true;
+    };
+  };
+
+  programs.starship = {
+      enable = true;
+      settings = {
+          add_newline = true;
+      };
   };
 
   home.stateVersion = "24.11";

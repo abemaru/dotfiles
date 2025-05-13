@@ -86,9 +86,9 @@
     isNormalUser = true;
     description = "abemaru";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
+    # packages = with pkgs; [
     #  thunderbird
-    ];
+    #];
     shell = pkgs.zsh;
   };
 

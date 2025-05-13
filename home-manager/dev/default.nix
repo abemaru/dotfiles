@@ -5,8 +5,6 @@
 }: {
   home.packages = with pkgs; [
     vscode
-    gh
-
     # LTS at 2025/05/12
     python311
     rye
@@ -21,13 +19,6 @@
     enable = true;
     userName = "abemaru";
     userEmail = "awebo.abemaru@gmail.com";
-  };
-
-  programs.gh = {
-    enable = true;
-    gitCredentialHelper = {
-        enable = true;
-    };
   };
 
   programs.starship = {

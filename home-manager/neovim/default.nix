@@ -15,9 +15,34 @@ in
     viAlias = true;
     vimAlias = true;
     extraPackages = with pkgs; [
-      # LazyVim
+      # Lua
       lua-language-server
       stylua
+
+      # nix
+      nil
+      nixfmt-rfc-style
+
+      # Go
+      gopls
+
+      # TypeScript
+      nodePackages.eslint
+      nodePackages.prettier
+      nodePackages.typescript-language-server
+
+      # Python
+      ruff
+      pyright
+
+      # YAML
+      yaml-language-server
+
+      # TOML
+      taplo
+
+      # Docker
+      nodePackages.dockerfile-language-server-nodejs
 
       # Telescope
       ripgrep

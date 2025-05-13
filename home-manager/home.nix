@@ -9,10 +9,12 @@
   };
 
   imports = [
+    ./gh
     ./hyprland
     ./wezterm
     ./neovim
     ./dev
+    ./zsh
   ];
 
   i18n.inputMethod = {
@@ -28,6 +30,8 @@
 
     discord
   ];
+
+  programs.zsh.enable = true;
 
   programs.starship = {
       enable = true;

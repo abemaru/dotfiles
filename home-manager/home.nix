@@ -9,10 +9,10 @@
   };
 
   imports = [
-    ../pkgs/hyprland
-    ../pkgs/wezterm
-    ../pkgs/neovim
-    ../pkgs/dev
+    ./hyprland
+    ./wezterm
+    ./neovim
+    ./dev
   ];
 
   i18n.inputMethod = {
@@ -25,25 +25,9 @@
 
   home.packages = with pkgs; [
     neofetch
-    vscode
 
     discord
-    
-    gh
   ];
-
-  programs.git = {
-    enable = true;
-    userName = "abemaru";
-    userEmail = "awebo.abemaru@gmail.com";
-  };
-
-  programs.gh = {
-    enable = true;
-    gitCredentialHelper = {
-        enable = true;
-    };
-  };
 
   programs.starship = {
       enable = true;

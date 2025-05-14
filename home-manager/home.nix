@@ -9,11 +9,12 @@
   };
 
   imports = [
+    ./dev
     ./gh
     ./hyprland
-    ./wezterm
     ./neovim
-    ./dev
+    ./starship
+    ./wezterm
     ./zsh
   ];
 
@@ -32,13 +33,6 @@
   ];
 
   programs.zsh.enable = true;
-
-  programs.starship = {
-      enable = true;
-      settings = {
-          add_newline = true;
-      };
-  };
 
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;

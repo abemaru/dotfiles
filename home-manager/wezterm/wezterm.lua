@@ -1,21 +1,53 @@
 local wezterm = require("wezterm")
 
 return {
-    font_size = 16.0,
-    window_frame = {
-        font_size = 14.0,
-    },
 
-    window_padding = {
-        left = 10,
-        right = 10,
-        top = 5,
-        bottom = 5,
-    },
+	-- Fonts
+	font = wezterm.font_with_fallback({
+		{ family = "HackGen Console NF", weight = "Regular" },
+		{ family = "HackGen Console NF", weight = "Regular", assume_emoji_presentation = true },
+		"Noto Color Emoji",
+	}),
+	font_size = 18.0,
+	window_frame = {
+		font_size = 18.0,
+	},
 
-    window_decorations = "RESIZE",
-    use_fancy_tab_bar = false,
-    hide_tab_bar_if_only_one_tab = true,
+	-- Opacity
+	window_background_opacity = 0.8,
+	macos_window_background_blur = 20,
 
-    use_ime = true,
+	-- Padding
+	window_padding = {
+		left = 10,
+		right = 10,
+		top = 5,
+		bottom = 5,
+	},
+
+	-- Window
+	window_decorations = "RESIZE",
+
+	-- Tabs
+	use_fancy_tab_bar = false,
+	hide_tab_bar_if_only_one_tab = true,
+	window_frame = {
+		inactive_titlebar_bg = "none",
+		active_titlebar_bg = "none",
+	},
+	show_new_tab_button_in_tab_bar = false,
+	show_close_tab_button_in_tabs = false,
+
+	colors = {
+		tab_bar = {
+			inactive_tab_edge = "none",
+		},
+	},
+
+	-- IME
+	use_ime = true,
+
+	-- Misc
+	check_for_updates = false,
+	audible_bell = "Disabled",
 }

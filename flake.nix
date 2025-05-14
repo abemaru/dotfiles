@@ -11,12 +11,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    hyprland,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -26,8 +29,6 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
 
-    nixModules = import ./nixos;
-    homeManagerModules = import ./home-manager;
     overlays = import ./overlays {inherit inputs;};
 
     nixosConfigurations = {

@@ -7,12 +7,11 @@
 
 {
   imports =    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    ./hardware-configuration.nix
 
-      # docker
-      ./docker.nix
-
-    ];
+    # docker
+    ./docker.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -97,10 +96,10 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+
+  # Install hyprland
+  # programs.hyprland.enable = true;
   programs = {
-    # starship = {
-    #   enable = true;
-    # };
     zsh = {
       enable = true;
     };
@@ -116,11 +115,18 @@
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
-    fcitx5.addons = [pkgs.fcitx5-mozc];
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+      fcitx5-skk
+    ];
   };
 
   fonts = {
     packages = with pkgs; [
+      nerdfonts
+      hackgen-nf-font
+
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-emoji

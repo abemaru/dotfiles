@@ -12,6 +12,11 @@
     # LTS at 2025/05/13
     nodejs_22
 
+    yarn
+    pnpm
+    bun
+    deno
+
     go
   ];
 
@@ -21,10 +26,10 @@
     userEmail = "awebo.abemaru@gmail.com";
   };
 
-  programs.starship = {
-      enable = true;
-      settings = {
-          add_newline = true;
-      };
-  };
+  #programs.starship = {
+  #    enable = true;
+  #    settings = {
+  #        add_newline = true;
+  #    };
+  #};
 }

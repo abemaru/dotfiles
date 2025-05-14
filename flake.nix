@@ -16,43 +16,27 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     home-manager,
-    hyprland,
     ...
   } @ inputs: let
-    inherit (self) outputs;
-    systems = [
-      "x86_64-linux"
-    ];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
+    system = "x86_64-linux";
   in {
 
     overlays = import ./overlays {inherit inputs;};
 
     nixosConfigurations = {
       gpd = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-	modules = [
-	  ./nixos/configuration.nix
-
-	  home-manager.nixosModules.home-manager
-	  {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.users.abemaru = import ./home-manager/home.nix;
-	  }
-	];
-      };
-    };
-    homeConfigurations = {
-      "abemaru@gpd"= home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home-manager/home.nix
-        ];
+	      modules = [
+	        ./nixos/configuration.nix
+	        home-manager.nixosModules.home-manager
+	        {
+	          home-manager.useGlobalPkgs = true;
+	          home-manager.useUserPackages = true;
+	          home-manager.users.abemaru = import ./home-manager/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs system;};
+	        }
+	      ];
       };
     };
   };

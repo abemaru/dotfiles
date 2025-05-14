@@ -70,37 +70,37 @@ in
 
 	        nvim-treesitter
 	        nvim-treesitter-textobjects
-	  nvim-web-devicons
+          nvim-web-devicons
 
-	  telescope-fzf-native-nvim
-	  telescope-nvim
-	 ];
-	 mkEntryFromDrv =
-	   drv:
-	     {
-	       name = "${lib.getName drv}";
-	       path = drv;
-	     };
-	 lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
-	 lazyConfig = substituteStrings {
-	    file = ./init.lua;
-	      replacements = [
- 	        {
-	          old = "@lazyPath@";
-	          new = "${lazyPath}";
-	        }
+          telescope-fzf-native-nvim
+          telescope-nvim
 	      ];
-	    };
-	    in
-            ''
-	      ${lazyConfig}
-	    '';
+	      mkEntryFromDrv =
+	      drv:
+	      {
+          name = "${lib.getName drv}";
+          path = drv;
+        };
+        lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
+        lazyConfig = substituteStrings {
+          file = ./init.lua;
+          replacements = [
+            {
+	            old = "@lazyPath@";
+	            new = "${lazyPath}";
+	          }
+	        ];
+	      };
+	      in
+        ''
+	        ${lazyConfig}
+	      '';
       };
 
       xdg.configFile."nvim/lua/conf" = {
         source = config.lib.file.mkOutOfStoreSymlink "${pwd}/conf";
       };
-  
+
       xdg.configFile."nvim/lua/plugins/" = {
         source = config.lib.file.mkOutOfStoreSymlink "${pwd}/plugins";
       };

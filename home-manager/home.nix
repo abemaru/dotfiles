@@ -13,7 +13,8 @@
     ./dev
     ./gh
     ./hyprland
-    ./neovim
+    # ./neovim
+    ./nixvim
     ./starship
     ./wezterm
     ./zsh

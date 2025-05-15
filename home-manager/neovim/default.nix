@@ -52,7 +52,7 @@ in
       lazy-nvim
     ];
 
-    extraLuaConfig = 
+    programs.nixvim.extraLuaConfig = 
       let
         plugins =  with pkgs.vimPlugins; [
           vim-closetag
@@ -66,7 +66,6 @@ in
           cmp-path
           cmp-cmdline
           cmp_luasnip
-
 
 	        nvim-treesitter
 	        nvim-treesitter-textobjects

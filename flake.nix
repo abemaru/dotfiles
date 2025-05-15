@@ -11,6 +11,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # nixvim
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
   };
@@ -18,23 +24,31 @@
   outputs = {
     nixpkgs,
     home-manager,
+    nixvim,
     ...
   } @ inputs: let
     system = "x86_64-linux";
   in {
-
     overlays = import ./overlays {inherit inputs;};
 
     nixosConfigurations = {
       gpd = nixpkgs.lib.nixosSystem {
 	      modules = [
 	        ./nixos/configuration.nix
+
 	        home-manager.nixosModules.home-manager
 	        {
-	          home-manager.useGlobalPkgs = true;
-	          home-manager.useUserPackages = true;
-	          home-manager.users.abemaru = import ./home-manager/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs system;};
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = [
+                nixvim.homeManagerModules.nixvim
+              ];
+              users = {
+                abemaru = import ./home-manager/home.nix;
+              };
+              extraSpecialArgs = { inherit inputs system;};
+            };
 	        }
 	      ];
       };

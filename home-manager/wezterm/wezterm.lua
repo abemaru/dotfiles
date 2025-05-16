@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 
 return {
+	-- Theme
+	color_scheme = "nord",
 
 	-- Fonts
 	font = wezterm.font_with_fallback({
@@ -9,12 +11,9 @@ return {
 		"Noto Color Emoji",
 	}),
 	font_size = 18.0,
-	window_frame = {
-		font_size = 18.0,
-	},
 
 	-- Opacity
-	window_background_opacity = 0.8,
+	window_background_opacity = 0.9,
 	macos_window_background_blur = 20,
 
 	-- Padding
@@ -32,6 +31,7 @@ return {
 	use_fancy_tab_bar = false,
 	hide_tab_bar_if_only_one_tab = true,
 	window_frame = {
+		font_size = 18.0,
 		inactive_titlebar_bg = "none",
 		active_titlebar_bg = "none",
 	},

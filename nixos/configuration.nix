@@ -1,9 +1,9 @@
-{ 
-  config,
+{
   pkgs,
   ...
-}: {
-  imports =    [
+}:
+{
+  imports = [
     ./hardware-configuration.nix
 
     ./docker.nix
@@ -36,6 +36,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  # services.xserver.desktopManager.gdm.wayland = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -49,11 +51,14 @@
   users.users.abemaru = {
     isNormalUser = true;
     description = "abemaru";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
-  
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

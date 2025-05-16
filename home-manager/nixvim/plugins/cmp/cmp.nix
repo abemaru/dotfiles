@@ -81,7 +81,7 @@
         enable = true;
       }; # snippets
       cmp-cmdline = {
-        enable = false;
+        enable = true;
       }; # autocomplete for cmdline
     };
     extraConfigLua = ''

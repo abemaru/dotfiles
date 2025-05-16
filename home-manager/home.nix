@@ -1,9 +1,8 @@
 {
-  config,
-  inputs,
   pkgs,
   ...
-}: {
+}:
+{
   home = {
     username = "abemaru";
     homeDirectory = "/home/abemaru";
@@ -13,7 +12,6 @@
     ./dev
     ./gh
     ./hyprland
-    # ./neovim
     ./nixvim
     ./starship
     ./wezterm

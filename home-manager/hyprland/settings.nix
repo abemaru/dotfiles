@@ -1,7 +1,7 @@
-{ lib, theme, ... }:
-let
-  colors = theme.colors;
-in
+{
+  lib,
+  ...
+}:
 {
   wayland.windowManager.hyprland.settings = {
     env = [
@@ -10,11 +10,8 @@ in
       "XMODIFIERS, @im=fcitx"
     ];
     exec-once = [
-      "swww init && swww img ~/.config/hypr/wallpaper/sea.jpg"
+      # "swww init && swww img ~/.config/hypr/wallpaper/sea.jpg"
       "fcitx5 -D"
-      "hypr-helper start"
-      "discord --start-minimized"
-      "steam -silent"
     ];
     windowrule = [ "pseudo, noblur, class:(fcitx)" ];
     windowrulev2 = [ "noblur,class:^()$,title:^()$" ];
@@ -28,8 +25,6 @@ in
       gaps_in = 5;
       gaps_out = 5;
       border_size = 2;
-      "col.inactive_border" = "rgb(${colors.bg})";
-      "col.active_border" = "rgb(${colors.blue})";
       resize_on_border = true;
     };
     decoration = {

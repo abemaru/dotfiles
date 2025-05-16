@@ -1,5 +1,7 @@
 _: {
   imports = [
+    ./settings.nix
+
     # cmp
     ./plugins/cmp/autopairs.nix
     ./plugins/cmp/cmp-copilot.nix
@@ -26,10 +28,13 @@ _: {
     # ui
     ./plugins/ui/bufferline.nix
     ./plugins/ui/lualine.nix
+    ./plugins/ui/noice.nix
+    ./plugins/ui/startup.nix
 
     # utils
     ./plugins/utils/mini.nix
     ./plugins/utils/telescope.nix
+    ./plugins/utils/toggleterm.nix
     ./plugins/utils/web-devicons.nix
   ];
 

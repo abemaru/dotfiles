@@ -18,9 +18,26 @@
     };
 
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.pre-commit-hooks.follows = "";
+    };
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprsome = {
       url = "github:sopa0/hyprsome";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ags.url = "github:Aylur/ags";
+
+    # xremap
+    xremap = {
+      url = "github:xremap/nix-flake";
+      inputs.home-manager.follows = "home-manager";
+      inputs.hyprland.follows = "hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -36,13 +53,16 @@
       system = "x86_64-linux";
     in
     {
-      overlays = import ./overlays { inherit inputs; };
-
       nixosConfigurations = {
         gpd = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs system; };
           modules = [
             ./nixos/configuration.nix
-
+            {
+              nixpkgs.overlays = [
+                inputs.hyprpanel.overlay
+              ];
+            }
             home-manager.nixosModules.home-manager
             {
               home-manager = {

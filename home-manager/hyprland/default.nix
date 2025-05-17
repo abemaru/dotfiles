@@ -6,7 +6,17 @@
 }:
 {
   imports = [
-    ./settings.nix
+    ./dunst.nix
+
+    ./gtk.nix
+
+    ./hyprlock.nix
+    ./hyprpanel.nix
+
+    ./keybinds.nix
+
+    # launcher
+    ./wofi.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -15,23 +25,16 @@
     package = inputs.hyprland.packages.${system}.hyprland;
   };
 
-  home.packages =
-    (with pkgs; [
-      brightnessctl
-      grimblast
-      hyprlock
-      hyprpicker
-      pamixer
-      playerctl
-      swww
-      wayvnc
-      wev
-      wf-recorder
-      wl-clipboard
-    ])
-    ++ [
-      inputs.hyprsome.packages.${pkgs.system}.default
-    ];
-
-  xdg.userDirs.createDirectories = true;
+  home.packages = with pkgs; [
+    brightnessctl # screen brightness
+    grimblast # screenshot
+    hyprpicker # color picker
+    pamixer # pulseaudio mixer
+    playerctl # media player control
+    swww # wallpaper
+    wayvnc # vnc server
+    wev # key event watcher
+    wf-recorder # screen recorder
+    wl-clipboard # clipboard manager
+  ];
 }

@@ -1,5 +1,7 @@
 {
   pkgs,
+  lib,
+  config,
   ...
 }:
 {
@@ -10,11 +12,16 @@
     ./fonts.nix
     ./i18n.nix
 
+    # hyprland
+    ./hyprland
+
     # audio
     ./pipwire.nix
 
     ./packages.nix
     ./settings.nix
+
+    ./xremap
   ];
 
   # Bootloader.
@@ -57,6 +64,16 @@
       "docker"
     ];
     shell = pkgs.zsh;
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${lib.getExe pkgs.greetd.tuigreet} --cmd ${lib.getExe config.programs.hyprland.package}";
+        user = "abemaru";
+      };
+    };
   };
 
   # This value determines the NixOS release from which the default

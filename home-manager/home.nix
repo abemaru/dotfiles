@@ -30,6 +30,18 @@
     neofetch
 
     discord
+    slack
+
+    obsidian
+    libreoffice-qt6-fresh
+
+    gimp
+    krita
+
+    mpv
+    spotify
+
+    gtop
   ];
 
   programs.zsh.enable = true;

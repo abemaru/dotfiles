@@ -1,21 +1,20 @@
-{ theme, ... }:
 {
   services.dunst = {
     enable = true;
-    settings = with theme.xcolors; {
+    settings = {
       global = {
         monitor = 1;
         timeout = 10;
         offset = "30x30";
         transparency = 10;
-        foreground = fg;
-        background = black;
-        frame_color = black;
+        foreground = "#c8d3f5";
+        background = "#1b1d2b";
+        frame_color = "#1b1d2b";
         corner_radius = 10;
         font = "Noto Sans CJK JP";
       };
       urgency_critical = {
-        frame_color = red;
+        frame_color = "#ff757f";
       };
     };
   };

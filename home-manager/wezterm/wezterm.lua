@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 return {
 	-- Theme
-	color_scheme = "nord",
+	color_scheme = "tokyonight",
 
 	-- Fonts
 	font = wezterm.font_with_fallback({

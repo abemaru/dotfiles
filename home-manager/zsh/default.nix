@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     # substitute of cat
     bat
@@ -11,6 +12,9 @@
 
     # cmd finder
     fzf
+
+    # substitute for grep
+    ripgrep
   ];
 
   programs.zsh = {
@@ -22,7 +26,8 @@
 
     shellAliases = {
       cat = "bat";
-      ls ="eza";
+      ls = "eza -al --icons";
+      tree = "eza -al --icons --tree";
     };
 
     initExtra =

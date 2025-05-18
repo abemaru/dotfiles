@@ -18,6 +18,7 @@
             };
           };
           sorting_strategy = "ascending";
+          case_mode = "smart_case";
         };
       };
     };

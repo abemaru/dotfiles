@@ -60,7 +60,7 @@
       resize_on_border = true;
     };
     decoration = {
-      rounding = 10;
+      rounding = 30;
       active_opacity = 0.8;
       inactive_opacity = 0.8;
       blur = {

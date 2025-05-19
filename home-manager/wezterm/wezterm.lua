@@ -35,6 +35,9 @@ return {
 		inactive_titlebar_bg = "none",
 		active_titlebar_bg = "none",
 	},
+	window_background_gradient = {
+		colors = { "#000000" },
+	},
 	show_new_tab_button_in_tab_bar = false,
 	show_close_tab_button_in_tabs = false,
 

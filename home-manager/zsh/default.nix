@@ -15,6 +15,9 @@
 
     # substitute for grep
     ripgrep
+
+    # better than cd command
+    z-lua
   ];
 
   programs.zsh = {
@@ -28,6 +31,7 @@
       cat = "bat";
       ls = "eza -al --icons";
       tree = "eza -al --icons --tree";
+      z = "cd";
     };
 
     initExtra =

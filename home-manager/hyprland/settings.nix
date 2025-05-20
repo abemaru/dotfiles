@@ -61,20 +61,17 @@
     };
     decoration = {
       rounding = 20;
-      # active_opacity = 0.8;
-      # inactive_opacity = 0.8;
       blur = {
         enabled = true;
-        xray = true;
+        xray = false;
         special = false;
         new_optimizations = true;
-        size = 12;
-        passes = 4;
+        size = 2;
+        passes = 1;
         brightness = 1;
         noise = 0.01;
-        contrast = 1;
-        popups = true;
-        popups_ignorealpha = 0.6;
+        contrast = 0.1;
+        popups = false;
       };
     };
     animations = {

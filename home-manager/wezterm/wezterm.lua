@@ -13,8 +13,8 @@ return {
 	font_size = 18.0,
 
 	-- Opacity
-	window_background_opacity = 0.9,
-	macos_window_background_blur = 20,
+	window_background_opacity = 0.6,
+	macos_window_background_blur = 30,
 
 	-- Padding
 	window_padding = {
@@ -25,7 +25,7 @@ return {
 	},
 
 	-- Window
-	window_decorations = "RESIZE",
+	window_decorations = "NONE",
 
 	-- Tabs
 	use_fancy_tab_bar = false,

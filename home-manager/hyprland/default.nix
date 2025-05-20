@@ -12,6 +12,7 @@
 
     ./hyprlock.nix
     ./hyprpanel.nix
+    ./hypridle.nix
 
     ./keybinds.nix
 

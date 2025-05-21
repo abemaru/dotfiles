@@ -19,3 +19,5 @@ $ sudo nixos-rebuild switch --flake .#gpd --show-trace
 
 - Hyprlockが起動時動かない
 - KeyBindなど使いながらいい感じにしていきたい
+- exec-onceのswwwのコマンド動いていない？
+- NixOSだけでなくほかのOSでも使えるように修正する

@@ -63,6 +63,10 @@
   services.greetd = {
     enable = true;
     settings = {
+      initial_session = {
+        command = "Hyprland";
+        user = "abemaru";
+      };
       default_session = {
         command = "${lib.getExe pkgs.greetd.tuigreet} --cmd ${lib.getExe config.programs.hyprland.package}";
         user = "abemaru";

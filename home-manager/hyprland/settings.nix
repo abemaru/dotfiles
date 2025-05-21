@@ -16,11 +16,10 @@
     exec-once = [
       "hyprlock"
       "hyprpanel"
-      "swww init && swww img ${pkgs.wallpaper-springcity}/wall.png"
+      "swww init && swww img ~/Pictures/Wallpaper/0.png"
       # "${./eww/config/scripts/start.sh}"
       "fcitx5 -D"
       "systemctl --user start hyprpolkitagent"
-      #"systemctl --user start plasma-polkit-agent"
       "wl-paste --watch cliphist store"
       "${pkgs.cliphist}/bin/cliphist wipe"
       "${pkgs.gitify}/bin/gitify"

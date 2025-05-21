@@ -14,3 +14,8 @@ My dotfiles for NixOS.
 ```bash
 $ sudo nixos-rebuild switch --flake .#gpd --show-trace
 ```
+
+## Todo
+
+- Hyprlockが起動時動かない
+- KeyBindなど使いながらいい感じにしていきたい

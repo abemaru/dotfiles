@@ -1,6 +1,7 @@
 _: {
   imports = [
     ./settings.nix
+    ./keymaps.nix
 
     # cmp
     ./plugins/cmp/autopairs.nix

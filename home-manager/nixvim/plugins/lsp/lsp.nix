@@ -21,9 +21,10 @@
           cssls = {
             enable = true;
           };
-          denols = {
-            enable = true;
-          };
+          # tsserverとの共存がうまくいっていないので一旦無効化...
+          # denols = {
+          #   enable = true;
+          # };
           docker_compose_language_service = {
             enable = true;
           };

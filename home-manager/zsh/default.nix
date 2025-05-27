@@ -34,7 +34,7 @@
       z = "cd";
     };
 
-    initExtra =
+    initContent =
       # bash
       ''
         function fzf-select-history() {

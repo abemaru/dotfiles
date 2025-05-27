@@ -1,9 +1,13 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     vscode
+
+    claude-code
+
     # LTS at 2025/05/12
     python311
     rye

@@ -33,6 +33,7 @@ _: {
     ./plugins/ui/startup.nix
 
     # utils
+    # ./plugins/utils/claude-code.nix <- allowUnfree error
     ./plugins/utils/mini.nix
     ./plugins/utils/telescope.nix
     ./plugins/utils/toggleterm.nix

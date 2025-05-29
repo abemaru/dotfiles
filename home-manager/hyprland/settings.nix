@@ -60,6 +60,14 @@
     };
     decoration = {
       rounding = 20;
+      active_opacity = 1.0;
+      inactive_opacity = 1.0;
+      fullscreen_opacity = 1.0;
+      drop_shadow = true;
+      shadow_range = 4;
+      shadow_render_power = 3;
+      shadow_ignore_window = true;
+      dim_inactive = false;
       blur = {
         enabled = true;
         xray = false;

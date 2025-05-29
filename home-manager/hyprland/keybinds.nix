@@ -150,7 +150,16 @@ in
       "$mainMod SHIFT, c, exec, hyprpicker --autocopy"
 
       # screen lock
-      "$mainMod, l, exec, swaylock --image ~/.config/hypr/wallpaper/talos-2.jpg"
+      "$mainMod, l, exec, hyprlock"
+
+      # discord
+      "$mainMod, d, exec, discord"
+
+      # browser(firefox)
+      "$mainMod, b, exec, firefox"
+
+      # music(spotify)
+      "$mainMod, m, exec, spotify"
 
       # system
       "$mainMod, x, exec, systemctl suspend"

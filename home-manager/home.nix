@@ -4,7 +4,7 @@
 }:
 {
   nixpkgs.config.allowUnfree = true;
-  
+
   home = {
     username = "abemaru";
     homeDirectory = "/home/abemaru";
@@ -30,7 +30,7 @@
   };
 
   home.packages = with pkgs; [
-    neofetch
+    fastfetch
 
     discord
     slack

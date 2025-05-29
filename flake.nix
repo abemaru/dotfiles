@@ -66,7 +66,7 @@
             home-manager.nixosModules.home-manager
             {
               home-manager = {
-                useGlobalPkgs = true;
+                useGlobalPkgs = false; # Changed to false to avoid the warning
                 useUserPackages = true;
                 sharedModules = [
                   nixvim.homeManagerModules.nixvim

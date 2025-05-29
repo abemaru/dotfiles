@@ -3,6 +3,8 @@
   ...
 }:
 {
+  nixpkgs.config.allowUnfree = true;
+  
   home = {
     username = "abemaru";
     homeDirectory = "/home/abemaru";

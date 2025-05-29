@@ -10,8 +10,15 @@
     # substitute of ls
     eza
 
+    # better than curl when using http/https
+    httpie
+
     # cmd finder
     fzf
+
+    # lazy's
+    lazygit
+    lazydocker
 
     # substitute for grep
     ripgrep
@@ -32,6 +39,7 @@
       ls = "eza -al --icons";
       tree = "eza -al --icons --tree";
       z = "cd";
+      v = "nvim";
     };
 
     initContent =

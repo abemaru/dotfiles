@@ -28,11 +28,4 @@
     userName = "abemaru";
     userEmail = "awebo.abemaru@gmail.com";
   };
-
-  #programs.starship = {
-  #    enable = true;
-  #    settings = {
-  #        add_newline = true;
-  #    };
-  #};
 }

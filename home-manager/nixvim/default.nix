@@ -11,6 +11,7 @@
     ./plugins/cmp/schemastore.nix
 
     # editor
+    ./plugins/editor/comment.nix
     ./plugins/editor/illuminate.nix
     ./plugins/editor/indent-blankline.nix
     ./plugins/editor/navic.nix
@@ -34,6 +35,7 @@
 
     # utils
     # ./plugins/utils/claude-code.nix <- allowUnfree error
+    ./plugins/utils/lazygit.nix
     ./plugins/utils/mini.nix
     ./plugins/utils/telescope.nix
     ./plugins/utils/toggleterm.nix

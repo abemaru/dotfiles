@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 let
   ws-switch =
     pkgs.writeScriptBin "ws-switch"

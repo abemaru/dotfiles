@@ -4,7 +4,7 @@
       # BufferLine
       {
         mode = "n";
-        key = "<C-h>";
+        key = "<C-l>";
         action = "<cmd>BufferLineCycleNext<cr>";
         options = {
           desc = "go to the next buffer";
@@ -12,7 +12,7 @@
       }
       {
         mode = "n";
-        key = "<C-l>";
+        key = "<C-h>";
         action = "<cmd>BufferLineCyclePrev<cr>";
         options = {
           desc = "go to the previous buffer";

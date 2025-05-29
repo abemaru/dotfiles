@@ -1,4 +1,7 @@
-{ inputs, ... }:
+{
+  inputs,
+  ...
+}:
 {
   hardware.uinput.enable = true;
   users.groups.uinput.members = [ "abemaru" ];

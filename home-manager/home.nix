@@ -44,6 +44,8 @@
     mpv
     spotify
 
+    google-chrome
+
     gtop
   ];
 

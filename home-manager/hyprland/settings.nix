@@ -21,7 +21,6 @@
       "hyprlock"
       "hyprpanel"
       "swww init && swww img ~/Pictures/Wallpaper/0.png"
-      # "${./eww/config/scripts/start.sh}"
       "fcitx5 -D"
       "systemctl --user start hyprpolkitagent"
       "wl-paste --watch cliphist store"

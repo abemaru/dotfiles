@@ -21,6 +21,13 @@
     deno
 
     go
+
+    # cloud
+    awscli2
+    terraform
+
+    # sqls
+    postgresql
   ];
 
   programs.git = {

@@ -22,7 +22,7 @@
       };
 
       label = [
-        # Yar
+        # Year
         {
           monitor = "";
           text = ''
@@ -35,19 +35,6 @@
           halign = "center";
           valign = "center";
         }
-        # Date-Month
-        {
-          monitor = "";
-          text = ''
-            						cmd[update:1000] echo -e "$(date +"%m/%d")"
-            					'';
-          color = "rgba(216, 222, 233, 0.70)";
-          font_size = 40;
-          font_family = "SF Pro Display Bold";
-          position = "0, 250";
-          halign = "center";
-          valign = "center";
-        }
         # Time
         {
           monitor = "";
@@ -55,13 +42,25 @@
             						cmd[update:1000] echo "<span>$(date +"- %H:%M -")</span>"
             					'';
           color = "rgba(216, 222, 233, 0.70)";
-          font_size = 20;
+          font_size = 40;
           font_family = "SF Pro Display Bold";
           position = "0, 190";
           halign = "center";
           valign = "center";
         }
-
+        # Date-Month
+        {
+          monitor = "";
+          text = ''
+            						cmd[update:1000] echo -e "$(date +"%m/%d")"
+            					'';
+          color = "rgba(216, 222, 233, 0.70)";
+          font_size = 20;
+          font_family = "SF Pro Display Bold";
+          position = "0, 250";
+          halign = "center";
+          valign = "center";
+        }
         # User
         {
           monitor = "";

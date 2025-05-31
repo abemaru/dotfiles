@@ -11,8 +11,16 @@ My dotfiles for NixOS.
 
 ## Setup
 
+#### install
+
 ```bash
 $ sudo nixos-rebuild switch --flake .#gpd --show-trace
+```
+
+#### update
+
+```bash
+nix flake update && sudo nixos-rebuild switch --flake .#gpd
 ```
 
 ## Todo

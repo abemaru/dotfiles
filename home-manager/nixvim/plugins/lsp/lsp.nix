@@ -33,6 +33,18 @@
           };
           eslint = {
             enable = true;
+            extraOptions = {
+              settings = {
+                workingDirectories = [ { mode = "auto"; } ];
+                experimental = {
+                  useFlatConfig = true;
+                };
+                format = {
+                  enable = true;
+                };
+                validate = [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
+              };
+            };
           };
           gopls = {
             enable = true;

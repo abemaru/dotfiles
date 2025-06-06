@@ -10,6 +10,7 @@
 
     # LTS at 2025/05/12
     python311
+    uv
     rye
 
     # LTS at 2025/05/13

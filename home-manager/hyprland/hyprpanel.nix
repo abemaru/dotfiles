@@ -23,9 +23,9 @@
   };
   programs.hyprpanel = {
     enable = true;
-    overlay.enable = true;
-    overwrite.enable = true;
-    hyprland.enable = true;
+    # overlay.enable = true;
+    # overwrite.enable = true;
+    # hyprland.enable = true;
     settings = {
       layout = {
         "bar.layouts" =

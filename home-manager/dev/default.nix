@@ -7,6 +7,7 @@
     vscode
 
     claude-code
+    gemini-cli
 
     # LTS at 2025/05/12
     python311

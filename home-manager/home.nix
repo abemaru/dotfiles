@@ -34,6 +34,7 @@
 
     discord
     slack
+    google-chat-linux
 
     obsidian
     libreoffice-qt6-fresh

@@ -16,6 +16,9 @@
     # cmd finder
     fzf
 
+    # env, dev tools, task runner
+    mise
+
     # lazy's
     lazygit
     lazydocker

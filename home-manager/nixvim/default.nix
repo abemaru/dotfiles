@@ -36,6 +36,7 @@
     # utils
     ./plugins/utils/lazygit.nix
     ./plugins/utils/mini.nix
+    ./plugins/utils/rest.nix
     ./plugins/utils/telescope.nix
     ./plugins/utils/toggleterm.nix
     ./plugins/utils/web-devicons.nix
